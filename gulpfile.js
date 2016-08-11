@@ -4,6 +4,7 @@ var poststylus = require('poststylus');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var nib = require('nib');
+var livereload = require('gulp-livereload');
 
 gulp.task('stylus', function () {
   gulp.src('./assets/stylus/home.styl')
@@ -14,7 +15,8 @@ gulp.task('stylus', function () {
       ],
       compress: true
     }))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest('./public/css'))
+    .pipe(livereload());;
 });
 gulp.task('compress', function() {
   gulp.src('./assets/js/*.js')
@@ -23,6 +25,7 @@ gulp.task('compress', function() {
     .pipe(gulp.dest('./public/js'));
 });
 gulp.task('watch', ['compress', 'stylus'], function() {
+  livereload.listen();
   gulp.watch('./assets/stylus/**/*.styl', ['stylus']);
   gulp.watch('./assets/js/**/*.js', ['compress']);
 });
