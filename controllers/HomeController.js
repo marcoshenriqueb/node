@@ -3,7 +3,7 @@ var router = express.Router();
 
 // define the home page route
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Node.js', message: 'Express + Socket.io'});
+  res.render('index');
 });
 
 module.exports = router;
