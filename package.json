@@ -16,9 +16,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
+    "browser-sync": "^2.14.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
-    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.1.0",
     "gulp-stylus": "^2.5.0",
     "gulp-uglify": "^2.0.0",
     "nib": "^1.1.2",
